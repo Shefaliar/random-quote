@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Thought Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        #quote-box {
+            background-color: white;
+            margin: 100px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            border-radius: 8px;
+        }
+        #quote {
+            font-size: 24px;
+            font-style: italic;
+        }
+        #author {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+        img {
+            margin-top: 15px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quote-box">
+        <div id="quote">"The best way to find yourself is to lose yourself in the service of others."</div>
+        <div id="author">- Mahatma Gandhi</div>
+        <img id="author-img" src="Gandhi.jpg" alt="Mahatma Gandhi">
+        <br>
+        <button onclick="generateQuote()">New Quote</button>
+    </div>
+
+    <script>
+        const quotes = [
+            {
+                quote: "The best way to find yourself is to lose yourself in the service of others.",
+                author: "Mahatma Gandhi",
+                img: "Gandhi.jpg"
+            },
+            {
+                quote: "In a gentle way, you can shake the world.",
+                author: "Mahatma Gandhi",
+                img: "Gandhi.jpg"
+            },
+            {
+                quote: "Arise, awake and stop not until the goal is reached.",
+                author: "Swami Vivekananda",
+                img: "Swami_Vivekananda.jpg"
+            },
+            {
+                quote: "The world is the great gymnasium where we come to make ourselves strong.",
+                author: "Swami Vivekananda",
+                img: "Swami_Vivekananda.jpg"
+            },
+            {
+                quote: "An eye for an eye only ends up making the whole world blind.",
+                author: "Mahatma Gandhi",
+                img: "Gandhi.jpg"
+            },
+            {
+                quote: "It is health that is real wealth and not pieces of gold and silver.",
+                author: "Mahatma Gandhi",
+                img: "Gandhi.jpg"
+            },
+            {
+                quote: "Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.",
+                author: "A. P. J. Abdul Kalam",
+                img: "APJ_Abdul_Kalam.jpg"
+            },
+            {
+                quote: "You have to dream before your dreams can come true.",
+                author: "A. P. J. Abdul Kalam",
+                img: "APJ_Abdul_Kalam.jpg"
+            },
+            {
+                quote: "Don't take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck.",
+                author: "A. P. J. Abdul Kalam",
+                img: "APJ_Abdul_Kalam.jpg"
+            },
+            {
+                quote: "I measure the progress of a community by the degree of progress which women have achieved.",
+                author: "B. R. Ambedkar",
+                img: "BR_Ambedkar.jpg"
+            },
+            {
+                quote: "They cannot make history who forget history.",
+                author: "B. R. Ambedkar",
+                img: "BR_Ambedkar.jpg"
+            }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            
+            document.getElementById('quote').textContent = `"${randomQuote.quote}"`;
+            document.getElementById('author').textContent = `- ${randomQuote.author}`;
+            document.getElementById('author-img').src = randomQuote.img;
+        }
+    </script>
+
+</body>
+</html>
